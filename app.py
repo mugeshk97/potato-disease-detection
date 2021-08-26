@@ -3,16 +3,13 @@ import uvicorn
 import numpy as np
 from io import BytesIO
 from PIL import Image
-import tensorflow as tf
-gpu = tf.config.experimental.list_physical_devices('GPU')[0]
-tf.config.experimental.set_memory_growth(gpu, True)
+import requests
+
+endpoint = 'http://localhost:8601/v1/models/potato-disease/labels/production:predict'
 
 app = FastAPI()
 
-model = tf.keras.models.load_model("models/1")
-
 class_names = ['potato_early_blight', 'potato_healthy', 'potato_late_blight']
-
 
 def read_file(data) -> np.ndarray:
     image = np.array(Image.open(BytesIO(data)))
@@ -22,10 +19,15 @@ def read_file(data) -> np.ndarray:
 async def predict(file: UploadFile = File(...)):
 
     image = read_file(await file.read())
-    image_batch = np.expand_dims(image, 0)  
-    predictions = model.predict(image_batch)
-    predicted_class = class_names[np.argmax(predictions[0])]
-    confidence = np.max(predictions[0])
+    image_batch = np.expand_dims(image, 0)
+    data = {
+        'instances': image_batch.tolist()
+        }
+    response = requests.post(endpoint, json=data)
+    prediction = np.array(response.json()["predictions"][0])
+    predicted_class = class_names[np.argmax(prediction)]
+    confidence = np.max(prediction)
+
     return {
         'class': predicted_class,
         'confidence': float(confidence)
