@@ -1,0 +1,33 @@
+nohup: ignoring input
+2021-08-27 07:41:43.603473: I tensorflow_serving/model_servers/server_core.cc:465] Adding/updating models.
+2021-08-27 07:41:43.603529: I tensorflow_serving/model_servers/server_core.cc:591]  (Re-)adding model: potato-disease
+2021-08-27 07:41:43.704251: I tensorflow_serving/core/basic_manager.cc:740] Successfully reserved resources to load servable {name: potato-disease version: 2}
+2021-08-27 07:41:43.704369: I tensorflow_serving/core/loader_harness.cc:66] Approving load for servable version {name: potato-disease version: 2}
+2021-08-27 07:41:43.704410: I tensorflow_serving/core/loader_harness.cc:74] Loading servable version {name: potato-disease version: 2}
+2021-08-27 07:41:43.704511: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:38] Reading SavedModel from: /home/mugesh/projects/potato-disease-detection/serving/models/2
+2021-08-27 07:41:43.719880: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:90] Reading meta graph with tags { serve }
+2021-08-27 07:41:43.719984: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:132] Reading SavedModel debug info (if present) from: /home/mugesh/projects/potato-disease-detection/serving/models/2
+2021-08-27 07:41:43.720200: I external/org_tensorflow/tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-08-27 07:41:43.768402: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:211] Restoring SavedModel bundle.
+2021-08-27 07:41:43.803865: I tensorflow_serving/core/basic_manager.cc:740] Successfully reserved resources to load servable {name: potato-disease version: 1}
+2021-08-27 07:41:43.803904: I tensorflow_serving/core/loader_harness.cc:66] Approving load for servable version {name: potato-disease version: 1}
+2021-08-27 07:41:43.803918: I tensorflow_serving/core/loader_harness.cc:74] Loading servable version {name: potato-disease version: 1}
+2021-08-27 07:41:43.803944: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:38] Reading SavedModel from: /home/mugesh/projects/potato-disease-detection/serving/models/1
+2021-08-27 07:41:43.809569: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:90] Reading meta graph with tags { serve }
+2021-08-27 07:41:43.809609: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:132] Reading SavedModel debug info (if present) from: /home/mugesh/projects/potato-disease-detection/serving/models/1
+2021-08-27 07:41:43.824186: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:211] Restoring SavedModel bundle.
+2021-08-27 07:41:43.854760: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:195] Running initialization op on SavedModel bundle at path: /home/mugesh/projects/potato-disease-detection/serving/models/2
+2021-08-27 07:41:43.866209: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:283] SavedModel load for tags { serve }; Status: success: OK. Took 161696 microseconds.
+2021-08-27 07:41:43.867378: I tensorflow_serving/servables/tensorflow/saved_model_warmup_util.cc:59] No warmup data file found at /home/mugesh/projects/potato-disease-detection/serving/models/2/assets.extra/tf_serving_warmup_requests
+2021-08-27 07:41:43.868338: I tensorflow_serving/core/loader_harness.cc:87] Successfully loaded servable version {name: potato-disease version: 2}
+2021-08-27 07:41:43.883600: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:195] Running initialization op on SavedModel bundle at path: /home/mugesh/projects/potato-disease-detection/serving/models/1
+2021-08-27 07:41:43.891916: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:283] SavedModel load for tags { serve }; Status: success: OK. Took 87969 microseconds.
+2021-08-27 07:41:43.893013: I tensorflow_serving/servables/tensorflow/saved_model_warmup_util.cc:59] No warmup data file found at /home/mugesh/projects/potato-disease-detection/serving/models/1/assets.extra/tf_serving_warmup_requests
+2021-08-27 07:41:43.893909: I tensorflow_serving/core/loader_harness.cc:87] Successfully loaded servable version {name: potato-disease version: 1}
+2021-08-27 07:41:43.894867: I tensorflow_serving/model_servers/server_core.cc:486] Finished adding/updating models
+2021-08-27 07:41:43.894908: I tensorflow_serving/model_servers/server.cc:133] Using InsecureServerCredentials
+2021-08-27 07:41:43.894919: I tensorflow_serving/model_servers/server.cc:383] Profiler service is enabled
+2021-08-27 07:41:43.895632: I tensorflow_serving/model_servers/server.cc:409] Running gRPC ModelServer at 0.0.0.0:8500 ...
+[evhttp_server.cc : 245] NET_LOG: Entering the event loop ...
+2021-08-27 07:41:43.896429: I tensorflow_serving/model_servers/server.cc:430] Exporting HTTP/REST API at:localhost:8601 ...
